@@ -31,6 +31,7 @@ const queryType = new GraphQLObjectType({
             type: new GraphQLList(studentType), // out put data type
             resolve: () => {
                 const students = StudentModel.find().exec();
+                console.log('I am here-------------------------')
                 if(!students) throw new Error('Error, Can not find Students!.');
                 return students;
             },
@@ -69,6 +70,7 @@ const mutation = new GraphQLObjectType({
         updateStudent: {
             type: studentType,
             args: {
+                id: { name: 'id', type: new GraphQLNonNull(GraphQLString) },
                 name: { type: new GraphQLNonNull(GraphQLString) },
                 field_of_study: { type: new GraphQLNonNull(GraphQLString) },
                 enrolment_year: { type: new GraphQLNonNull(GraphQLInt) },

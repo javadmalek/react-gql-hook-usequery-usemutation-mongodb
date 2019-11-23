@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 
 var mongoose = require('mongoose');
 // Create a connection to the MongoDB server using these lines of codes.
-mongoose.connect('mongodb://localhost/node-graphql', { promiseLibrary: require('bluebird'), useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/student-graphql', { promiseLibrary: require('bluebird'), useNewUrlParser: true })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
@@ -33,9 +33,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('*', cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('*', cors());
 app.use('/graphql', cors(), graphqlHTTP({
   schema: schema,
   rootValue: global,
