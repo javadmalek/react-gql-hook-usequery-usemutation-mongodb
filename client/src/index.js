@@ -14,7 +14,7 @@ import StudentCreate from './components/student/Create.js';
 import StudentShow from './components/student/Show.js';
 
 
-// uri: server/graphql
+// uri: server_address/graphql
 const client = new ApolloClient({ uri: 'http://localhost:3000/graphql' });
 
 ReactDOM.render(
