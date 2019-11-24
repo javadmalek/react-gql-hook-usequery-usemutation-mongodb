@@ -12,10 +12,10 @@
 - Create React.js Application
 - Install and Configure Required Modules and Dependencies
 - Create React.js Router DOM
-- Create a React Component to Display List of Students/Courses/Marks
-- Create a React Component to Show and Delete Students/Courses/Marks
-- Create a React Component to Add a New Student/Course/Mark
-- Create a React Component to Edit a Student/Course/Mark
+- Create a React Component to Display List of Students/Courses/Marks, using "@apollo/react-hooks" npm to communicate by useQuery and useMutation hooks to have a better interaction with ApolloProvider
+- Create a React Component to Show and Delete Students/Courses/Marks, using "@apollo/react-hooks" npm to communicate by useQuery and useMutation hooks to have a better interaction with ApolloProvider
+- Create a React Component to Add a New Student/Course/Mark, using "@apollo/react-hooks" npm to communicate by useQuery and useMutation hooks to have a better interaction with ApolloProvider
+- Create a React Component to Edit a Student/Course/Mark, using "@apollo/react-hooks" npm to communicate by useQuery and useMutation hooks to have a better interaction with ApolloProvider
 - Run and Test GraphQL CRUD from the React.js Application
 
 
@@ -27,3 +27,8 @@
  - GraphQL
  - Express-GraphQL
  - React Apollo
+
+### Segments
+
+- Server
+- Client
