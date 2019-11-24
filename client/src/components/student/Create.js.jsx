@@ -51,11 +51,11 @@ const Create = ({ history }) => {
                     <h4><Link to="/student/list" className="btn btn-primary">Student List</Link></h4>
                     <form onSubmit={onSubmit}>
                         <div className="form-group">
-                            <label htmlFor="name">name:</label>
+                            <label htmlFor="name">Name:</label>
                             <input type="text" className="form-control" name="name" ref={node => (name = node)} placeholder="name" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="field_of_study">field_of_study:</label>
+                            <label htmlFor="field_of_study">Field of Study:</label>
                             <input type="text" className="form-control" name="field_of_study" ref={node => (field_of_study = node)} placeholder="field_of_study" />
                         </div>
                         <div className="form-group">

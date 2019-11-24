@@ -33,6 +33,7 @@ const DeleteStudentLink = ({ history, studentId }) => {
         e.preventDefault();
 
         removeStudent({ variables: { studentId } });
+        history.push('/student/list');
     };
     
     return (
@@ -46,10 +47,9 @@ const DeleteStudentLink = ({ history, studentId }) => {
 
 const Show = ({ history, match }) => {
     const { id: studentId } = match.params;
-    const onCompleted = () => history.push('/student/list');
 
     //Execute the get stuident query
-    const { loading, error, data } = useQuery(GET_STUDENT_BY_ID, { variables: { studentId }, onCompleted })
+    const { loading, error, data } = useQuery(GET_STUDENT_BY_ID, { variables: { studentId } })
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
 
