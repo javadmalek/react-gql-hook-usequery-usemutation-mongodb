@@ -7,9 +7,11 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Edit from './components/Edit.js';
-import Create from './components/Create.js';
-import Show from './components/Show.js';
+
+import StudentList from './components/student/List.js';
+import StudentEdit from './components/student/Edit.js';
+import StudentCreate from './components/student/Create.js';
+import StudentShow from './components/student/Show.js';
 
 
 // uri: server/graphql
@@ -20,9 +22,10 @@ ReactDOM.render(
         <Router>
             <div>
                 <Route exact path='/' component={App} />
-                <Route path='/edit/:id' component={Edit} />
-                <Route path='/create' component={Create} />
-                <Route path='/show/:id' component={Show} />
+                <Route path='/student/list' component={StudentList} />
+                <Route path='/student/edit/:id' component={StudentEdit} />
+                <Route path='/student/create' component={StudentCreate} />
+                <Route path='/student/show/:id' component={StudentShow} />
             </div>
         </Router>
     </ApolloProvider>, 

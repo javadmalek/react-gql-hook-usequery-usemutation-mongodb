@@ -22,17 +22,18 @@ const ADD_STUDENT = gql`
 const Create = (props) => {  
     let name, field_of_study, enrolment_year;
     return (
-        <Mutation mutation={ADD_STUDENT} onCompleted={() => props.history.push('/')}>
+        <Mutation mutation={ADD_STUDENT} onCompleted={() => props.history.push('/student/list')}>
             {(addStudent, { loading, error }) => (
                 <div className="container">
                     <div className="panel panel-default">
                         <div className="panel-heading">
+                            <h4><Link to="/">Home</Link></h4>
                             <h3 className="panel-title">
                                 ADD STUDENT
                             </h3>
                         </div>
                         <div className="panel-body">
-                            <h4><Link to="/" className="btn btn-primary">Student List</Link></h4>
+                            <h4><Link to="/student/list" className="btn btn-primary">Student List</Link></h4>
                             <form onSubmit={e => {
                                 e.preventDefault();
                                 addStudent({ variables: { name: name.value, field_of_study: field_of_study.value, enrolment_year: parseInt(enrolment_year.value) } });
