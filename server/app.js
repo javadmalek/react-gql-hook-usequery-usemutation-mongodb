@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost/student-graphql', { promiseLibrary: requir
 
 // 'Import and Create GraphQL Schemas'
 var graphqlHTTP = require('express-graphql');
-var schema = require('./graphql/schema');
+var allSchema = require('./graphql/all_schemas');
 var cors = require("cors");
 
 
@@ -37,7 +37,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('*', cors());
 app.use('/graphql', cors(), graphqlHTTP({
-  schema: schema,
+  schema: allSchema,
   rootValue: global,
   graphiql: true,
 }));
