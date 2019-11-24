@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
 import gql from 'graphql-tag';
 import { Query, Mutation } from 'react-apollo';
 
@@ -35,7 +34,7 @@ function renderDeleteLink(removeStudent, loading, error, student) {
     return (
         <div>
             <form onSubmit={e => onDeleteLinkClick(e, removeStudent, student._id)}>
-                <Link to={`/edit/${student._id}`} className="btn btn-success">Edit</Link>&nbsp;
+                <Link to={`/student/edit/${student._id}`} className="btn btn-success">Edit</Link>&nbsp;
                 <button type="submit" className="btn btn-danger">Delete</button>
             </form>
             {loading && <p>Loading...</p>}
@@ -44,7 +43,7 @@ function renderDeleteLink(removeStudent, loading, error, student) {
     )
 }
 const DeleteStudentLink = ({ history, student}) => (
-        <Mutation mutation={DELETE_STUDENT} key={student._id} onCompleted={() => history.push('/')}>
+        <Mutation mutation={DELETE_STUDENT} key={student._id} onCompleted={() => history.push('/student/list')}>
             {(removeStudent, { loading, error }) => renderDeleteLink(removeStudent, loading, error, student)}
         </Mutation>
     );
@@ -57,7 +56,8 @@ function renderView(props, { loading, error, data }) {
         <div className="container">
             <div className="panel panel-default">
                 <div className="panel-heading">
-                <h4><Link to="/">Student List</Link></h4>
+                <h4><Link to="/">Home</Link></h4>
+                <h4><Link to="/student/list">Student List</Link></h4>
                     <h3 className="panel-title">
                     {data.student.name}
                     </h3>

@@ -45,15 +45,16 @@ const Edit = (props) => {
                 if (error) return `Error! ${error.message}`;
         
                 return (
-                    <Mutation mutation={UPDATE_STUDENT} key={data.student._id} onCompleted={() => props.history.push(`/`)}>
+                    <Mutation mutation={UPDATE_STUDENT} key={data.student._id} onCompleted={() => props.history.push(`/student/list`)}>
                         {(updateStudent, { loading, error }) => (
                             <div className="container">
                                 <div className="panel panel-default">
+                                <h4><Link to="/">Home</Link></h4>
                                     <div className="panel-heading">
                                         <h3 className="panel-title">EDIT STUDENT</h3>
                                     </div>
                                     <div className="panel-body">
-                                        <h4><Link to="/" className="btn btn-primary">Student List</Link></h4>
+                                        <h4><Link to="/student/list" className="btn btn-primary">Student List</Link></h4>
                                         <form onSubmit={e => {
                                             e.preventDefault();
                                             updateStudent({ variables: { id: data.student._id, name: name.value, field_of_study: field_of_study.value, enrolment_year: parseInt(enrolment_year.value) } });
